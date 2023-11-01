@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cronômetro</title>
+</head>
+<body>
+  <h1>Cronômetro</h1>
+  <div id="cronometro">0:00</div>
+  <button id="iniciar">Iniciar</button>
+  <button id="pausar">Pausar</button>
+  <button id="reiniciar">Reiniciar</button>
+
+  <script>
+    let cronometroInterval;
+    let segundos = 0;
+    let minutos = 0;
+
+    const cronometroElement = document.getElementById("cronometro");
+    const iniciarButton = document.getElementById("iniciar");
+    const pausarButton = document.getElementById("pausar");
+    const reiniciarButton = document.getElementById("reiniciar");
+
+    iniciarButton.addEventListener("click", function() {
+      iniciarCronometro();
+      iniciarButton.disabled = true;
+      pausarButton.disabled = false;
+    });
+
+    pausarButton.addEventListener("click", function() {
+      pausarCronometro();
+      iniciarButton.disabled = false;
+      pausarButton.disabled = true;
+    });
+
+    reiniciarButton.addEventListener("click", function() {
+      reiniciarCronometro();
+      iniciarButton.disabled = false;
+      pausarButton.disabled = true;
+    });
+
+    function iniciarCronometro() {
+      cronometroInterval = setInterval(function() {
+        segundos++;
+        if (segundos === 60) {
+          segundos = 0;
+          minutos++;
+        }
+        atualizarCronometro();
+      }, 1000);
+    }
+
+    function pausarCronometro() {
+      clearInterval(cronometroInterval);
+    }
+
+    function reiniciarCronometro() {
+      pausarCronometro();
+      segundos = 0;
+      minutos = 0;
+      atualizarCronometro();
+    }
+
+    function atualizarCronometro() {
+      const minutosStr = minutos < 10 ? "0" + minutos : minutos;
+      const segundosStr = segundos < 10 ? "0" + segundos : segundos;
+      cronometroElement.innerText = minutosStr + ":" + segundosStr;
+    }
+  </script>
+</body>
+</html>
