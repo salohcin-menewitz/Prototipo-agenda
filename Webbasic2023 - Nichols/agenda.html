@@ -7,15 +7,29 @@
 <body>
     <div class="container">
         <h1>Agenda de Estudo</h1>
+        <button><a href="cadastroMateria.html">cadastrar nova materia</a></button>
+    </div>
+        <div class="container">
         <div class="agenda">
             <div class="tarefa">
-                <p>Estudar HTML</p>
+                <h3>Estudar HTML</h3>
                 <button class="start-btn" onclick="startTimer(25)">Iniciar</button>
                 <span id="timer">25:00</span>
             </div>
             <!-- Adicione mais tarefas aqui -->
+            
         </div>
     </div>
-    <script src="agenda.js"></script>
+    <div class="container">
+        
+        <div>
+            <p>Teste cronometro</p>
+            <span id="cronometro">0:00</span>
+            <button id="iniciar">Iniciar</button>
+            <button id="pausar">Pausar</button>
+            <button id="reiniciar">Reiniciar</button>
+        </div>
+    </div>
+  <script src="agenda.js"></script>
 </body>
 </html>
