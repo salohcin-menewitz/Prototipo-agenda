@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuração</title>
+    <link rel="stylesheet" href=".css/estilo.css">
+    <link rel="stylesheet" href="./css/darkmode.css">
+</head>
+
+<body>
+    <input type="checkbox" id="menu-check">
+    <label for="menu-check">
+        <img src="./img/icone-menu.png" width="40px">
+    </label>
+    <nav>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./configuracao.html">Configuração</a></li>
+        </ul>
+    </nav>
+    <nav>
+    <svg display="none">
+        <symbol id="light" viewBox="0 0 24 24">
+        
+        </symbol>
+        <symbol id="dark" viewBox="0 0 24 24">
+
+        </symbol>
+    </svg>
+
+    <label class="switch">
+        <input class="switch__input" type="checkbox" role="switch" name="dark"/>
+        <svg class="switch__icon" width="24" height="24" aria-hidden="true">
+            <use href="#light" />
+        </svg>
+
+        <svg class="switch__icon" width="24" height="24" aria-hidden="true">
+            <use href="#dark" />
+        </svg>
+
+        <span class="switch__inner"></span>
+
+        <span class="switch__inner-icons"></span>
+        <svg class="switch__icon" width="24" height="24" aria-hidden="true">
+            <use href="#light" />
+        </svg>
+
+        <svg class="switch__icon" width="24" height="24" aria-hidden="true">
+            <use href="#dark" />
+        </svg>
+    </label>
+    </nav>
+</body>
+
+</html>

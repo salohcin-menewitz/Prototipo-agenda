@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda</title>
+    <link rel="stylesheet" href="./css/estilo.css">
+</head>
+
+<body onload="montaCalendario()">
+    <input type="checkbox" id="menu-check">
+    <label for="menu-check">
+        <img src="./img/icone-menu.png" width="40px">
+    </label>
+    <nav>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./configuracao.html">Configuração</a></li>
+        </ul>
+    </nav>
+
+    <div id="novaAgenda">
+        <h4 id="tituloAgendaMInsere">Nova Agenda</h4>
+        <input type="text" id="inputTituloAgendaMInsere" placeholder="Título">
+
+        <label for="tipoAgendaMInsere" id="tituloTipoAgendaMInsere">Tipo da Agenda</label>
+        <form id="tipoAgendaMInsere">
+            <div id="tipoAgendaContainerMInsere"></div>
+        </form>
+
+        <button id="salvarAgendaMInsere" onclick="criarAgenda()">Salvar</button>
+        <button id="cancelarAgendaMInsere" onclick="fechaModalInsere()">Cancelar</button>
+    </div>
+
+    <div id="exibeAgenda">
+        <h4 id="tituloAgendaMExibe"></h4>
+        <input type="text" id="inputTituloAgendaMExibe" placeholder="Título">
+
+        <label for="tipoAgendaMExibe" id="tituloTipoAgendaMExibe">Tipo da Agenda</label>
+        <form id="tipoAgendaMExibe">
+            <div id="tipoAgendaContainerMExibe"></div>
+        </form>
+
+        <button id="salvarAgendaMExibe" onclick="atualizarAgenda()">Salvar</button>
+        <button id="deletarAgendaMExibe" onclick="deletarAgenda()">Deletar</button>
+        <button id="cancelarAgendaMExibe" onclick="fechaModalExibe()">Fechar</button>
+    </div>
+
+    <div id="espacoCalendario">
+        <div id="cabecalho">
+            <button id="botaoAnterior" class="botoesCalendario">&lt;</button>
+            <div id="mesSelecionado"></div>
+            <button id="botaoPosterior" class="botoesCalendario">&gt;</button>
+        </div>
+
+        <div id="diasDaSemana">
+            <div>Domingo</div>
+            <div>Segunda-feira</div>
+            <div>Terça-feira</div>
+            <div>Quarta-feira</div>
+            <div>Quinta-feira</div>
+            <div>Sexta-feira</div>
+            <div>Sábado</div>
+        </div>
+
+        <div id="calendario"></div>
+    </div>
+
+    <div id="fundoModal"></div>
+
+</body>
+<script src="./js/repository.js"></script>
+<script src="./js/scripts.js"></script>
+
+</html>

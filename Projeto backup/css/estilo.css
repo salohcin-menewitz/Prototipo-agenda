@@ -1,0 +1,173 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 10px 5px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #6d6875;
+}
+
+ul {
+    list-style: none;
+    position: absolute;
+    top: 70px;
+    width: 100%;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked~nav {
+    transform: translateX(300px);
+}
+
+nav {
+    background-color: rgba(16, 16, 16, 0.5);
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    left: -300px;
+    transition: all .5s;
+}
+
+a:hover {
+    background-color: rgb(176, 224, 230);
+    color: black;
+}
+
+label {
+    position: absolute;
+    padding: 15px;
+    z-index: 1;
+}
+
+#espacoCalendario {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    justify-content: center;
+    max-width: 770px;
+    margin: 0 auto;
+}
+
+#cabecalho {
+    padding: 10px;
+    font-size: 26px;
+    color: rgb(3, 81, 83);
+    background-color: whitesmoke;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+
+.botoesCalendario {
+    width: 40px;
+    height: 20px;
+}
+
+#diasDaSemana {
+    width: 100%;
+    display: flex;
+}
+
+#diasDaSemana div {
+    width: 100px;
+    padding: 10px;
+    color: chocolate;
+    font-size: 12px;
+    text-align: center;
+}
+
+#calendario {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dia {
+    width: 100px;
+    padding: 10px;
+    height: 100px;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: white;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10%;
+    border-color: rgba(62, 62, 60, 0.5);
+    border-style: solid;
+    border-width: 1px;
+}
+
+.dia:hover {
+    box-shadow: 0px 0px 3px rgba(62, 62, 60, 0.5);
+    background-color: rgba(0, 0, 0, 0.1);
+    border-width: 0px;
+}
+
+.dia+#diaAtual {
+    background-color: rgba(100, 191, 190, 0.5);
+}
+
+.dia+#diaAtual:hover {
+    background-color: rgba(100, 191, 190, 0.8);
+}
+
+.foraDoMes {
+    cursor: default !important;
+    box-shadow: none !important;
+    border-width: 0px;
+}
+
+#novaAgenda,
+#exibeAgenda {
+    display: none;
+    z-index: 20;
+    padding: 25px;
+    background-color: rgb(248, 248, 255);
+    box-shadow: 0px 0px 3px black;
+    border-radius: 5px;
+    width: 350px;
+    top: 100px;
+    left: calc(50% - 175px);
+    position: absolute;
+    font-family: sans-serif;
+}
+
+#fundoModal {
+    display: none;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.erro {
+    border-color: red;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.erroTexto {
+    color: red;
+}
+
+.agenda {
+    font-size: 12px;
+    padding-left: 5%;
+}
